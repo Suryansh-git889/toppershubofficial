@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Live Classes - Topper Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            padding: 30px;
+            background: rgba(10, 10, 10, 0.9);
+            border: 4px solid #ff0033;
+            box-shadow: 0px 0px 20px rgba(255, 0, 51, 0.8);
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #ff0033, #ff00ff);
+            z-index: -1;
+            border-radius: 20px;
+            filter: blur(10px);
+            animation: neonGlow 1.5s infinite alternate;
+        }
+
+        @keyframes neonGlow {
+            0% { filter: blur(5px); opacity: 0.7; }
+            100% { filter: blur(15px); opacity: 1; }
+        }
+
+        .glitch {
+            font-size: 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+            color: #ff0033;
+            text-shadow: 0 0 10px #ff0033, 0 0 20px #ff0033, 0 0 40px #ff0033;
+            animation: glitch 1s infinite alternate;
+        }
+
+        @keyframes glitch {
+            0% { transform: skewX(0deg); }
+            50% { transform: skewX(5deg); }
+            100% { transform: skewX(-5deg); }
+        }
+
+        .subtext {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #ff66ff;
+            text-shadow: 0 0 5px #ff66ff;
+        }
+
+        .image-box {
+            margin-top: 20px;
+        }
+
+        .image-box img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            border: 4px solid #ff0033;
+            box-shadow: 0px 0px 10px rgba(255, 0, 51, 0.8);
+        }
+
+        .back-btn {
+            background: linear-gradient(45deg, #ff0033, #ff00ff);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.3s ease;
+            box-shadow: 0px 5px 15px rgba(255, 0, 51, 0.5);
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 25px rgba(255, 0, 51, 0.8);
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 0, 51, 0.5);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 5s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0.8; }
+            50% { transform: translateY(-30px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle" style="top: 10%; left: 20%; animation-duration: 6s;"></div>
+        <div class="particle" style="top: 30%; left: 80%; animation-duration: 4s;"></div>
+        <div class="particle" style="top: 50%; left: 50%; animation-duration: 5s;"></div>
+        <div class="particle" style="top: 70%; left: 10%; animation-duration: 3s;"></div>
+        <div class="particle" style="top: 90%; left: 90%; animation-duration: 7s;"></div>
+    </div>
+
+    <div class="container">
+        <div class="glitch">NO LIVE CLASSES TODAY</div>
+        <div class="subtext">⚠ No sessions are scheduled today. Stay tuned for the next one!</div>
+
+        <a href="chooseclass.html" class="back-btn">Go Back</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topper Hub - Batches</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0f24, #1c233d);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background: rgba(10, 15, 36, 0.9);
+            padding: 20px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(255, 140, 0, 0.5);
+        }
+
+        header span {
+            color: #ff6f00;
+            padding: 5px 12px;
+            background: rgba(255, 111, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .toggle-buttons {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .toggle-btn {
+            background: linear-gradient(90deg, #ff512f, #dd2476);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0px 5px 15px rgba(255, 81, 47, 0.5);
+        }
+
+        .toggle-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 25px rgba(255, 81, 47, 0.8);
+        }
+
+        .batch-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .batch-card {
+            background: linear-gradient(145deg, #1c2541, #232a49);
+            border-radius: 15px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease-in-out;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .batch-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.5);
+        }
+
+        .batch-info {
+            padding: 20px;
+        }
+
+        .batch-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #ff6f00;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #f39c12;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .batch-button {
+            background: linear-gradient(90deg, #ff512f, #dd2476);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s ease;
+            box-shadow: 0px 5px 15px rgba(255, 81, 47, 0.5);
+        }
+
+        .batch-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 25px rgba(255, 81, 47, 0.8);
+        }
+
+        .live-class {
+            background: linear-gradient(145deg, #ff0000, #8b0000);
+            color: white;
+            border: 2px solid #ff4500;
+            animation: glow 1.5s infinite alternate;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+        }
+
+        .live-class:hover {
+            box-shadow: 0 0 25px rgba(255, 69, 0, 1);
+            transform: scale(1.05);
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+            }
+            to {
+                box-shadow: 0 0 25px rgba(255, 69, 0, 1);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background: rgba(10, 15, 36, 0.9);
+            color: white;
+            font-size: 16px;
+            margin-top: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        Topper <span>Hub</span>
+    </header>
+
+    <div class="toggle-buttons">
+        <button class="toggle-btn" onclick="showLectures()">Lectures</button>
+        <button class="toggle-btn" onclick="showNotes()">Notes</button>
+    </div>
+
+   
+<div id="lectures" class="batch-section">
+    <!-- Live Class Card -->
+    <div class="batch-card live-class">
+        <div class="batch-info">
+            <div class="batch-title">LIVE CLASS 🔴</div>
+            <p>Join the ongoing live session now!</p>
+            <a href="livecmsoon.html" class="batch-button">Join Live</a>
+        </div>
+    </div>
+
+    <!-- Welcome Video Batch -->
+    <div class="batch-card">
+        <div class="batch-info">
+            <div class="batch-title">DEMO LECTURES 🩷</div>
+            <p>Watch official Demo lectures Now!</p>
+            <a href="demolectures.html" class="batch-button">Watch Now</a>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notes" class="batch-section hidden">
+        <div class="batch-card">
+            <div class="batch-info">
+                <div class="batch-title">COMING SOON</div>
+                <a href="#pdf1" class="batch-button">View Notes</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Topper Hub. All Rights Reserved.
+    </footer>
+
+    <script>
+        function showLectures() {
+            document.getElementById('lectures').classList.remove('hidden');
+            document.getElementById('notes').classList.add('hidden');
+        }
+
+        function showNotes() {
+            document.getElementById('notes').classList.remove('hidden');
+            document.getElementById('lectures').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>

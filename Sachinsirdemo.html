@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Lectures by Topper Hub</title>
+
+    <!-- Plyr Video Player CSS -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+            transition: opacity 0.3s;
+        }
+
+        .header .hub {
+            background: orange;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+
+        .video-container {
+            max-width: 1280px;
+            margin: auto;
+            padding: 50px 10px;
+        }
+
+        .hide-header {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topper Hub Header -->
+    <div class="header" id="topperHeader">
+        <span>Topper</span> <span class="hub">Hub</span>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <video id="player" playsinline controls></video>
+    </div>
+
+    <!-- Plyr & HLS JS -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('player');
+            const source = 'https://Surya.b-cdn.net/1000068958.mp4'; // Your BunnyCDN Video
+
+            if (source.endsWith('.m3u8') && Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(source);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                    new Plyr(video);
+                });
+            } else {
+                video.src = source;
+                new Plyr(video);
+            }
+
+            // Hide header in full screen mode
+            document.addEventListener('fullscreenchange', () => {
+                document.getElementById('topperHeader').classList.toggle("hide-header", document.fullscreenElement);
+            });
+        });
+    </script>
+
+</body>
+</html>

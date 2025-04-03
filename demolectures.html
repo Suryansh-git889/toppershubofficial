@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Lectures | Topper Hub</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: #0a192f;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff8c00, #ff2e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Batches Container */
+        .batch-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        /* Individual Batch */
+        .batch {
+            background: linear-gradient(135deg, rgba(255, 0, 100, 0.2), rgba(0, 200, 255, 0.2));
+            border-radius: 20px;
+            overflow: hidden;
+            width: 350px;
+            padding: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .batch:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 100, 0.5);
+        }
+
+        .batch img {
+            width: 100%;
+            border-radius: 15px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .batch-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+        }
+
+        /* Glowing Button */
+        .view-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #ff8c00, #ff2e63);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: 0.5s;
+        }
+
+        .view-btn:hover::before {
+            left: 100%;
+        }
+
+        .view-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Demo Lectures arjuna jee</h1>
+
+    <div class="batch-container">
+        <!-- 1st Batch -->
+        <div class="batch">
+            <img src="https://i.ibb.co/gHW1Rsn/07a6d73e-1609-444b-8eec-20656c205a4e.png" alt="Om Pandey Sir">
+            <div class="batch-title">Demo Lecture by Om Pandey Sir</div>
+            <a href="ompandeydemo.html" class="view-btn">View Lecture</a>
+        </div>
+
+        <!-- 2nd Batch -->
+        <div class="batch">
+            <img src="https://i.ibb.co/Jj7Hdf9m/d0ffb7a7-1c29-497d-a2dc-9e2dc59a33ca.png" alt="Rahul Dudi Sir">
+            <div class="batch-title">Demo Lecture by Rahul Dudi Sir</div>
+            <a href="Rahildudidemo.html" class="view-btn">View Lecture</a>
+        </div>
+
+        <!-- 3rd Batch -->
+        <div class="batch">
+            <img src="https://i.ibb.co/78R8HPH/f13669a7-a061-47c4-b5ec-6af4cbdedab8.png" alt="Pankaj Sir">
+            <div class="batch-title">Demo Lecture by Pankaj Sir</div>
+            <a href="Pankajsirdemo.html" class="view-btn">View Lecture</a>
+        </div>
+
+        <!-- 4th Batch -->
+        <div class="batch">
+            <img src="https://i.ibb.co/kg8tDQXT/1b538bc1-b0a6-4f1f-8bd3-cfcfa1695338.png" alt="Sachin Sir">
+            <div class="batch-title">Demo Lecture by Sachin Sir</div>
+            <a href="Sachinsirdemo.html" class="view-btn">View Lecture</a>
+        </div>
+    </div>
+
+</body>
+</html>

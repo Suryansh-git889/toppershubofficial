@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn Money - Topper Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            background: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(20, 20, 20, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+            text-align: center;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); }
+            100% { box-shadow: 0 0 30px rgba(255, 69, 0, 0.9); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        }
+
+        .message {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: cyan;
+        }
+
+        .think-again {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: orange;
+            text-shadow: 0 0 10px rgba(255, 69, 0, 0.9);
+            animation: fadeInOut 1.5s infinite alternate;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        .btn {
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 12px 30px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Earn Money?</h1>
+        <p class="message">You are here because you dream big. But is money your true goal?</p>
+        <p class="message">A future doctor, engineer, or officer doesn't chase small rewards.they are made to do something big</p>
+        <p class="message">They focus on knowledge, growth, and success.</p>
+        <p class="think-again">Think Again...</p>
+        <button class="btn" onclick="focusOnGoal()">Stay Focused </button>
+    </div>
+
+    <script>
+        function focusOnGoal() {
+            alert("Success is waiting for you. Stay focused! 💡");
+            location.href = "#"; // Redirect to a study-related page.
+        }
+    </script>
+
+</body>
+</html>

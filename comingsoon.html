@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batches Coming Soon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background Animation */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: cyan;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); opacity: 0.5; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 1; }
+        }
+
+        /* Glowing Box */
+        .box {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 15px cyan;
+            border: 2px solid rgba(0, 255, 255, 0.7);
+            max-width: 400px;
+            width: 90%;
+            animation: pulse 2s infinite alternate;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px cyan; }
+            100% { box-shadow: 0 0 30px cyan; }
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animated Text */
+        .coming-soon {
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px cyan;
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        .description {
+            font-size: 1rem;
+            margin: 15px 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Buttons */
+        .btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 1);
+        }
+
+        .telegram-btn {
+            background: linear-gradient(90deg, #0088cc, #0044cc);
+            box-shadow: 0 0 20px rgba(0, 136, 204, 1);
+        }
+
+        .telegram-btn:hover {
+            box-shadow: 0 0 30px rgba(0, 136, 204, 1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Animation Container -->
+    <div class="background"></div>
+
+    <!-- Glowing Box -->
+    <div class="box">
+        <div class="coming-soon">Batches Coming Soon!</div>
+        <p class="description">Stay Tuned for Exclusive Updates 🚀</p>
+
+        <!-- Buttons -->
+        <button class="btn telegram-btn" onclick="location.href='https://tinyurl.com/33dvazcd'">Join Us on Telegram</button>
+    </div>
+
+    <script>
+        // Generate floating particles
+        const particleContainer = document.querySelector('.background');
+        
+        for (let i = 0; i < 30; i++) {
+            let particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = Math.random() * 100 + 'vh';
+            particle.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            particleContainer.appendChild(particle);
+        }
+    </script>
+
+</body>
+</html>

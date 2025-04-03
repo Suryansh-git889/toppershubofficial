@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topper Hub - Class Selection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            background: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 80px; /* Header ke liye space */
+        }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 20, 20, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            background: orange;
+            padding: 3px 8px;
+            border-radius: 5px;
+            color: black;
+        }
+
+        .notification-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .notification-icon:hover {
+            transform: scale(1.2);
+        }
+
+        /* NOTIFICATION POPUP */
+        .notification-popup {
+            display: none;
+            position: fixed;
+            top: 70px;
+            right: 10px;
+            width: 260px;
+            background: rgba(20, 20, 20, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+            text-align: left;
+            z-index: 1001;
+        }
+
+        .notification-popup h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: cyan;
+        }
+
+        .notification-popup ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .notification-popup ul li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            padding-left: 10px;
+            border-left: 3px solid cyan;
+        }
+
+        /* BOX */
+        .box {
+            background: rgba(20, 20, 20, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            animation: neon-glow 2s infinite alternate;
+        }
+
+        @keyframes neon-glow {
+            0% { box-shadow: 0 0 15px rgba(255, 0, 255, 0.7); }
+            100% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.9); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 12px 30px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+        }
+
+        .access-books {
+            background: linear-gradient(90deg, #ff4500, #ff1493);
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.9);
+        }
+
+        .access-books:hover {
+            box-shadow: 0 0 30px rgba(255, 69, 0, 1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">Toppers <span>Hub</span></div>
+        <div class="notification-icon" onclick="toggleNotification()">🔔</div>
+    </div>
+
+    <!-- NOTIFICATION POPUP -->
+    <div class="notification-popup" id="notificationPopup">
+        <h3>🔔 Updates</h3>
+        <ul>
+            <li> ALL NT BATCHES ADDED!</li>
+            <li>Improved navigation experience.</li>
+            <li>Bug fixes and performance improvements.</li>
+            <li>ARJUNA JEE DEMO LECTURES ADDED 🤗</li>
+        </ul>
+    </div>
+
+    <!-- MAIN BOX -->
+    <div class="box">
+        <h1>Choose Your Class</h1>
+        <button class="btn" onclick="location.href='Class10thbatches.html'">Class 10th</button>
+        <button class="btn" onclick="location.href='Class11thbatches.html'">Class 11th</button>
+        <button class="btn" onclick="location.href='comingsoon.html'">Class 12th</button>
+        <button class="btn access-books" onclick="location.href='books.html'">Access All Books</button>
+    </div>
+
+    <script>
+        function toggleNotification() {
+            let popup = document.getElementById("notificationPopup");
+            popup.style.display = (popup.style.display === "block") ? "none" : "block";
+        }
+
+        // Close the notification if clicked outside
+        document.addEventListener("click", function(event) {
+            let popup = document.getElementById("notificationPopup");
+            let icon = document.querySelector(".notification-icon");
+
+            if (!popup.contains(event.target) && !icon.contains(event.target)) {
+                popup.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
